@@ -1427,7 +1427,7 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         gSaveBlock1Ptr->tx_Mode_Modern_Moves                = TX_MODE_MODERN_MOVES;
         gSaveBlock1Ptr->tx_Mode_Legendary_Abilities         = TX_MODE_LEGENDARY_ABILITIES;
         gSaveBlock1Ptr->tx_Mode_New_Legendaries             = TX_MODE_NEW_LEGENDARIES;
-        gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = TX_MODE_TYPE_EFFECTIVENESS;
+        //gSaveBlock1Ptr->tx_Mode_TypeEffectiveness           = TX_MODE_TYPE_EFFECTIVENESS;
 
         gSaveBlock1Ptr->tx_Features_RTCType                 = TX_FEATURES_RTC_TYPE;
         gSaveBlock1Ptr->tx_Features_ShinyChance             = TX_FEATURES_SHINY_CHANCE;
