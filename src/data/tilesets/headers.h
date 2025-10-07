@@ -32,7 +32,7 @@ const struct Tileset gTileset_General_Frontier_East =
     .isSecondary = FALSE,
     .tiles = gTilesetTiles_General_Frontier_East,
     .palettes = gTilesetPalettes_General,
-    .metatiles = gMetatiles_General,
+    .metatiles = gMetatiles_General_Frontier,
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_HoennGeneral,
 };
@@ -44,7 +44,7 @@ const struct Tileset gTileset_General_Frontier_West =
     .isSecondary = FALSE,
     .tiles = gTilesetTiles_General_Frontier_West,
     .palettes = gTilesetPalettes_General,
-    .metatiles = gMetatiles_General,
+    .metatiles = gMetatiles_General_Frontier,
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_HoennGeneral,
 };
