@@ -384,6 +384,14 @@ const u32 gObjectEventPic_TrainMid[] = INCBIN_U32("graphics/object_events/pics/m
 const u32 gObjectEventPic_TrainBack[] = INCBIN_U32("graphics/object_events/pics/misc/train_back.4bpp");
 const u32 gObjectEventPic_SwimmerM_Land[] = INCBIN_U32("graphics/object_events/pics/people/swimmer_m_land.4bpp");
 const u32 gObjectEventPic_SwimmerF_Land[] = INCBIN_U32("graphics/object_events/pics/people/swimmer_f_land.4bpp");
+//New frontier brain Ow
+const u32 gObjectEventPic_Anabel_New[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/anabel.4bpp");
+const u32 gObjectEventPic_Tucker_New[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/tucker.4bpp");
+const u32 gObjectEventPic_Spenser_New[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/spenser.4bpp");
+const u32 gObjectEventPic_Greta_New[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/greta.4bpp");
+const u32 gObjectEventPic_Noland_New[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/noland.4bpp");
+const u32 gObjectEventPic_Lucy_New[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/lucy.4bpp");
+const u32 gObjectEventPic_Brandon_New[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/brandon.4bpp");
 
 
 // Normally, INCBIN_COMP acts like INCBIN_U32, but appends `.lz` to the file, compressing it;
