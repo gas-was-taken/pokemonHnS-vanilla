@@ -151,10 +151,10 @@
 #define METATILE_CeruleanCity_Cerulean  0x298
 
 // gTileset_Contest
-#define METATILE_Contest_CounterFlap_Bottom  0x2D9
-#define METATILE_Contest_CounterFlap_Top     0x2D1
-#define METATILE_Contest_FloorShadow         0x261
-#define METATILE_Contest_WallShadow          0x221
+#define METATILE_Contest_CounterFlap_Bottom  0x359
+#define METATILE_Contest_CounterFlap_Top     0x351
+#define METATILE_Contest_FloorShadow         0x2E1
+#define METATILE_Contest_WallShadow          0x2A1
 
 // gTileset_Dewford
 #define METATILE_Dewford_Door              0x225
