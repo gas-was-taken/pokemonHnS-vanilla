@@ -41,7 +41,7 @@ BattleTower_Outside_EventScript_Sailor::
 	end
 
 BattleTowerOutsideYoungsterText:
-	.string "Wow, the BATTLE TOWER is huge!\p"
+	.string "Wow, the TRAINER HILL is huge!\p"
 	.string "There must be many kinds of\n"
 	.string "POKéMON in there!$"
 
@@ -56,12 +56,12 @@ BattleTowerOutsideSailorText:
 	.string "I have to win it all. That I must!$"
 
 BattleTowerOutsideSignText:
-	.string "BATTLE TOWER\p"
-	.string "Take the Ultimate Trainer\n"
-	.string "Challenge!$"
+	.string "{RIGHT_ARROW} TRAINER HILL ENTRANCE\p"
+	.string "“Scale the heights, you hot-blooded\n"
+	.string "TRAINERS!”$"
 
 BattleTowerOutsideText_Closed:
-	.string "The BATTLE TOWER is currently\n"
+	.string "The TRAINER HILL is currently\n"
 	.string "closed for repairs.$"
 
 
