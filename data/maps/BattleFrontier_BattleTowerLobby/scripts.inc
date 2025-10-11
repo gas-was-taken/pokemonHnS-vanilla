@@ -366,6 +366,15 @@ BattleFrontier_BattleTowerLobby_EventScript_ExplainMultisChallenge::
 	goto BattleFrontier_BattleTowerLobby_EventScript_AskEnterMultisChallenge
 	end
 
+BattleFrontier_BattleTowerLobby_EventScript_LinkMultisAttendantNotAvailable::
+	msgbox BattleFrontier_BattleTowerLobby_Text_NotAvailable, MSGBOX_DEFAULT
+	closemessage
+	end
+
+BattleFrontier_BattleTowerLobby_Text_NotAvailable::
+	.string "Sorry, but the LINK MULTI BATTLE\n"
+	.string "ROOMS are not available right now.$"
+
 BattleFrontier_BattleTowerLobby_EventScript_LinkMultisAttendant::
 	lock
 	faceplayer
