@@ -10455,7 +10455,13 @@ u16 GetBattleBGM(void)
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
                 return MUS_DP_VS_GYM_LEADER;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3)
-                return MUS_HG_VS_GYM_LEADER;
+                if (gMapHeader.region == REGION_KANTO)
+				{
+				   return MUS_HG_VS_GYM_LEADER_KANTO;
+				} 
+				else {
+				   return MUS_HG_VS_GYM_LEADER;
+				}
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4)
                 return MUS_HG_VS_GYM_LEADER_KANTO;
             else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 5)
@@ -10613,8 +10619,14 @@ u16 GetBattleBGM(void)
                     return MUS_RG_VS_TRAINER;
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 2)
                     return MUS_DP_VS_TRAINER;
-                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3)
-                    return MUS_HG_VS_TRAINER;
+                else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 3)	// this is what's used in-game
+                    if (gMapHeader.region == REGION_KANTO)
+					{
+					   return MUS_HG_VS_TRAINER_KANTO;
+					} 
+					else {
+					   return MUS_HG_VS_TRAINER;
+					}
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 4)
                     return MUS_HG_VS_TRAINER_KANTO;
                 else if (gSaveBlock2Ptr->optionsTrainerBattleMusic == 5)
@@ -10641,7 +10653,7 @@ u16 GetBattleBGM(void)
             return MUS_RG_VS_WILD;
         else if (gSaveBlock2Ptr->optionsWildBattleMusic == 2)
             return MUS_DP_VS_WILD;
-        else if (gSaveBlock2Ptr->optionsWildBattleMusic == 3)	// this is what is used ingame
+        else if (gSaveBlock2Ptr->optionsWildBattleMusic == 3)	// this is what's used in-game
             if (gMapHeader.region == REGION_KANTO)
 			{
 			   return MUS_HG_VS_WILD_KANTO;
