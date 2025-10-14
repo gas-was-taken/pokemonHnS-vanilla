@@ -611,12 +611,14 @@ static void LoadCurrentMapData(void)
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
     gMapHeader.mapLayout = GetMapLayout();
+	gMapHeader.region = sMapsecToRegion[gMapHeader.regionMapSectionId];		// regional stuff
 }
 
 static void LoadSaveblockMapHeader(void)
 {
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gMapHeader.mapLayout = GetMapLayout();
+	gMapHeader.region = sMapsecToRegion[gMapHeader.regionMapSectionId];		// regional stuff
 }
 
 static void SetPlayerCoordsFromWarp(void)
@@ -3542,3 +3544,12 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
         sprite->data[7]++;
     }
 }
+
+
+// regional stuff
+static const u8 sMapsecToRegion[];
+
+static const u8 sMapsecToRegion[] = {
+	[MAPSEC_NEW_BARK_TOWN]            	= REGION_JOHTO,
+	[MAPSEC_VERMILION_CITY]				= REGION_KANTO
+};
