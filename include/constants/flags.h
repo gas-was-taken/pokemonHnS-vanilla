@@ -898,7 +898,7 @@
 #define FLAG_HIDE_ILEX_FOREST_SECOND_CELEBI                         0x34F
 #define FLAG_HIDE_OLIVINE_PORT_OAK                                            0x350
 #define FLAG_HIDE_ROUTE22_GIOVANNI_SILVER                                            0x351
-#define FLAG_UNUSED_SET3                                            0x352
+#define FLAG_HIDE_MTMOON_JIRACHI                                            0x352
 #define FLAG_UNUSED_SET4                                            0x353
 #define FLAG_UNUSED_SET5                                            0x354
 #define FLAG_UNUSED_SET6                                            0x355
@@ -910,7 +910,7 @@
 #define FLAG_HIDE_CERULEAN_GYM_POKEMON                                          0x35B
 #define FLAG_HIDE_NEWBARKTOWN_LAB_AIDE                                          0x35C
 #define FLAG_HIDE_AZALEA_TOWN_CUT_MASTER                                          0x35D
-#define FLAG_UNUSED_UNSET6                                          0x35E
+#define FLAG_SUMMONED_MTMOON_JIRACHI                                          0x35E
 #define FLAG_UNUSED_UNSET7                                          0x35F
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_1           0x360
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2           0x361

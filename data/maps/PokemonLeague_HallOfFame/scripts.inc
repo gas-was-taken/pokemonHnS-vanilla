@@ -90,6 +90,7 @@ PokemonLeague_HallOfFame_EventScript_SetGameClearFlags::
 	clearflag FLAG_CAUGHT_MEW
 	clearflag FLAG_BATTLED_DEOXYS
 	clearflag FLAG_DEFEATED_DEOXYS
+	clearflag FLAG_SUMMONED_MTMOON_JIRACHI
 	setvar VAR_LEAGUE_STATE, 1
 	return
 
