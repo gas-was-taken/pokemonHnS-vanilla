@@ -243,6 +243,7 @@ NewBarkTown_Lab_EventScript_ChoseStarter::
 	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_Lab_EventScript_ChoseStarter_NicknameStarter_Nuzlocke
 	msgbox NewBarkTown_Lab_Text_Nickname, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, NewBarkTown_Lab_EventScript_NicknameStarter
+	callnative UpdateFollowingPokemon
 	release
 	end
 
