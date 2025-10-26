@@ -2504,11 +2504,13 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .THIEF = TRUE,
+        .BRICK_BREAK = TRUE,
         .CUT = TRUE,
         .SURF = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
         .WHIRLPOOL = TRUE,
+        .WATERFALL = TRUE,
     } },
 
     [SPECIES_VOLTORB] = { .learnset = {
