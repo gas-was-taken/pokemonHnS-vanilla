@@ -8764,8 +8764,8 @@
     {
       "id": "LAYOUT_WHIRL_ISLANDS_B3F",
       "name": "WhirlIslands_B3F_Layout",
-      "width": 30,
-      "height": 20,
+      "width": 60,
+      "height": 27,
       "primary_tileset": "gTileset_Johto_NorthEast",
       "secondary_tileset": "gTileset_WhirlIslands",
       "border_filepath": "data/layouts/WhirlIslands_B3F/border.bin",
