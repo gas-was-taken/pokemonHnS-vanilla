@@ -1848,6 +1848,7 @@ static const u16 sLickitungLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_LICK),
     LEVEL_UP_MOVE(7, MOVE_SUPERSONIC),
     LEVEL_UP_MOVE(12, MOVE_DEFENSE_CURL),
+    LEVEL_UP_MOVE(16, MOVE_MUD_SLAP),
     LEVEL_UP_MOVE(18, MOVE_KNOCK_OFF),
     LEVEL_UP_MOVE(23, MOVE_STOMP),
     LEVEL_UP_MOVE(29, MOVE_WRAP),
@@ -1856,6 +1857,7 @@ static const u16 sLickitungLevelUpLearnset[] = {
     LEVEL_UP_MOVE(40, MOVE_SLAM),
     LEVEL_UP_MOVE(45, MOVE_SCREECH),
     LEVEL_UP_MOVE(51, MOVE_REFRESH),
+    LEVEL_UP_MOVE(55, MOVE_MAGNITUDE),
     LEVEL_UP_END};
 
 static const u16 sKoffingLevelUpLearnset[] = {
