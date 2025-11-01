@@ -7215,6 +7215,7 @@ static const u16 sLickilickyLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_LICK),
     LEVEL_UP_MOVE(5, MOVE_SUPERSONIC),
     LEVEL_UP_MOVE(9, MOVE_DEFENSE_CURL),
+    LEVEL_UP_MOVE(12, MOVE_MUD_SLAP),
     LEVEL_UP_MOVE(13, MOVE_KNOCK_OFF),
     LEVEL_UP_MOVE(17, MOVE_WRAP),
     LEVEL_UP_MOVE(21, MOVE_STOMP),
@@ -7224,6 +7225,7 @@ static const u16 sLickilickyLevelUpLearnset[] = {
     LEVEL_UP_MOVE(41, MOVE_REFRESH),
     LEVEL_UP_MOVE(45, MOVE_SCREECH),
     LEVEL_UP_MOVE(46, MOVE_FOCUS_BLAST),
+    LEVEL_UP_MOVE(55, MOVE_MAGNITUDE),
     LEVEL_UP_END};
 
 static const u16 sMagmortarLevelUpLearnset[] = {
