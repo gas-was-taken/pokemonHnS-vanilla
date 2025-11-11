@@ -11,6 +11,7 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_PrizeClerkMons::
 	end
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeMon::
+	callnative DisableStaticRandomizer
 	showcoinsbox 1, 1
 	message MauvilleCity_GameCorner_Text_WhichPrize
 	waitmessage
@@ -27,6 +28,7 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeMon::
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange::
 	hidecoinsbox 0, 0
+	callnative EnableStaticRandomizer
 	closemessage
 	release
 	end
@@ -118,6 +120,7 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon::
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_PartyFull::
 	msgbox Route119_WeatherInstitute_2F_Text_NoRoomForPokemon
 	hidecoinsbox 0, 0
+	callnative EnableStaticRandomizer
 	closemessage
 	release
 	end
@@ -196,6 +199,7 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_PcMon::
 	goto GoldenrodCity_GameCorner_EventScript_SendMon
 	closemessage
 	hidecoinsbox 0, 0
+	callnative EnableStaticRandomizer
 	release
 	end
 
@@ -203,6 +207,7 @@ GoldenrodCity_GameCorner_EventScript_SendMon::
 	call Common_EventScript_TransferredToPC
 	closemessage
 	hidecoinsbox 0, 0
+	callnative EnableStaticRandomizer
 	release
 	end
 

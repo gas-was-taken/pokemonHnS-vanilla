@@ -575,3 +575,13 @@ void CheckNuzlockeMode(void)
     else if (gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore)
         VarSet(VAR_UNUSED_0x40FB, 1);
 }
+
+void DisableStaticRandomizer(void)
+{
+    gSaveBlock1Ptr->tx_Random_Static = 0;
+}
+
+void EnableStaticRandomizer(void)
+{
+    gSaveBlock1Ptr->tx_Random_Static = 1;
+}
