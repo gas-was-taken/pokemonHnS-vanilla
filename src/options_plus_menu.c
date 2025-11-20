@@ -59,6 +59,7 @@ enum
     MENUITEM_BATTLE_FAST_BATTLES,
     MENUITEM_BATTLE_NEW_BACKGROUNDS,
     MENUITEM_BATTLE_NEW_BATTLEUI,
+    MENUITEM_BATTLE_GEN_ONE_HYPER_BEAM,
     MENUITEM_BATTLE_BALL_PROMPT,
     MENUITEM_BATTLE_TYPE_EFFECTIVE,
     MENUITEM_BATTLE_RUN_TYPE,
@@ -221,6 +222,7 @@ static void DrawChoices_Unit_Type(int selection, int y);
 static void DrawChoices_Music(int selection, int y);
 static void DrawChoices_New_Backgrounds(int selection, int y);
 static void DrawChoices_New_BattleUI(int selection, int y);
+static void DrawChoices_GenOne_HyperBeam(int selection, int y);
 static void DrawChoices_Run_Type(int selection, int y);
 static void DrawChoices_Autorun_Surf(int selection, int y);
 static void DrawChoices_Autorun_Dive(int selection, int y);
@@ -290,6 +292,7 @@ struct // MENU_CUSTOM
     [MENUITEM_BATTLE_BALL_PROMPT]      = {DrawChoices_Ball_Prompt,        ProcessInput_Options_Two},
     [MENUITEM_BATTLE_NEW_BACKGROUNDS]  = {DrawChoices_New_Backgrounds,    ProcessInput_Options_Two},
     [MENUITEM_BATTLE_NEW_BATTLEUI]     = {DrawChoices_New_BattleUI,    ProcessInput_Options_Two},
+    [MENUITEM_BATTLE_GEN_ONE_HYPER_BEAM]     = {DrawChoices_GenOne_HyperBeam,    ProcessInput_Options_Two},
 };
 
 struct // MENU_SOUND
@@ -321,6 +324,7 @@ static const u8 sText_OptionBallPrompt[]          = _("BALL PROMPT");
 static const u8 sText_OptionUnitType[]            = _("UNIT SYSTEM");
 static const u8 sText_OptionNewBackgrounds[]      = _("BATTLE TERRAIN");
 static const u8 sText_OptionNewBattleUI[]         = _("BATTLE UI");
+static const u8 sText_GenOneHyperBeam[]           = _("HYPER BEAM");
 static const u8 sText_OptionRunType[]             = _("QUICK RUN");
 static const u8 sText_AutorunEnable_Surf[]        = _("AUTORUN (SURF)");
 static const u8 sText_AutorunEnable_Dive[]        = _("AUTORUN (DIVE)");
@@ -355,6 +359,7 @@ static const u8 *const sOptionMenuItemsNamesCustom[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_BALL_PROMPT]      = sText_OptionBallPrompt,
     [MENUITEM_BATTLE_NEW_BACKGROUNDS]  = sText_OptionNewBackgrounds,
     [MENUITEM_BATTLE_NEW_BATTLEUI]     = sText_OptionNewBattleUI,
+    [MENUITEM_BATTLE_GEN_ONE_HYPER_BEAM]      = sText_GenOneHyperBeam,
 };
 
 static const u8 sText_OptionMusic[]                  = _("MUSIC");
@@ -425,6 +430,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_BATTLE_COUNT:           return TRUE;
         case MENUITEM_BATTLE_NEW_BACKGROUNDS: return TRUE;
         case MENUITEM_BATTLE_NEW_BATTLEUI:    return TRUE;
+        case MENUITEM_BATTLE_GEN_ONE_HYPER_BEAM: return TRUE;
         }
     case MENU_SOUND:
         switch(selection)
@@ -515,9 +521,11 @@ static const u8 sText_Desc_Ball_Prompt_On[]        = _("Press {R_BUTTON} in batt
 static const u8 sText_Desc_Ball_Prompt_Off[]       = _("Disables the prompt to use\nPOKéBALLS quickly.");
 static const u8 sText_Desc_NewBackgrounds_Old[]    = _("Original battle terrain backgrounds.");
 //static const u8 sText_Desc_NewBackgrounds_New[]    = _("Modernized battle terrain\nbackgrounds, similar to GEN IV.");
-static const u8 sText_Desc_NewBattleUI_Old[]    = _("Original GEN III Battle UI.");
-static const u8 sText_Desc_NewBattleUI_New[]    = _("Modernized GEN IV Battle UI.");
-static const u8 sText_Desc_NewBackgrounds_New[]    = _("Modernized battle terrain\nbackgrounds, from HnS.");
+static const u8 sText_Desc_NewBattleUI_Old[]        = _("Original GEN III Battle UI.");
+static const u8 sText_Desc_NewBattleUI_New[]        = _("Modernized GEN IV Battle UI.");
+static const u8 sText_Desc_GenThreeHyperBeam[]      = _("HYPER BEAM always recharges\n after use.");
+static const u8 sText_Desc_GenOneHyperBeam[]        = _("If HYPER BEAM KO's the opponent,\n no recharge needed.");
+static const u8 sText_Desc_NewBackgrounds_New[]     = _("Modernized battle terrain\nbackgrounds, from HnS.");
 static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_BATTLE_COUNT][4] =
 {
 
@@ -529,6 +537,7 @@ static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_BATTLE_COUNT][
     [MENUITEM_BATTLE_BALL_PROMPT]         = {sText_Desc_Ball_Prompt_On,           sText_Desc_Ball_Prompt_Off},
     [MENUITEM_BATTLE_NEW_BACKGROUNDS]     = {sText_Desc_NewBackgrounds_Old,       sText_Desc_NewBackgrounds_New},
     [MENUITEM_BATTLE_NEW_BATTLEUI]        = {sText_Desc_NewBattleUI_Old,          sText_Desc_NewBattleUI_New},
+    [MENUITEM_BATTLE_GEN_ONE_HYPER_BEAM]  = {sText_Desc_GenThreeHyperBeam,          sText_Desc_GenOneHyperBeam},
     [MENUITEM_BATTLE_RUN_TYPE]            = {sText_Desc_Run_Type_Off,             sText_Desc_Run_Type_LR,             sText_Desc_Run_Type_B,         sText_Desc_Run_Type_B_2},
 };
 
@@ -596,6 +605,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_BATTLE
     [MENUITEM_BATTLE_BALL_PROMPT]         = sText_Empty,
     [MENUITEM_BATTLE_NEW_BACKGROUNDS]     = sText_Empty,
     [MENUITEM_BATTLE_NEW_BATTLEUI]        = sText_Empty,
+    [MENUITEM_BATTLE_GEN_ONE_HYPER_BEAM]  = sText_Empty,
     [MENUITEM_BATTLE_RUN_TYPE]            = sText_Empty,
 };
 
@@ -871,6 +881,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_battle[MENUITEM_BATTLE_BALL_PROMPT]       = gSaveBlock2Ptr->optionsBallPrompt;
         sOptions->sel_battle[MENUITEM_BATTLE_NEW_BACKGROUNDS]   = gSaveBlock2Ptr->optionsNewBackgrounds;
         sOptions->sel_battle[MENUITEM_BATTLE_NEW_BATTLEUI]      = gSaveBlock2Ptr->optionsNewBattleUI;
+        sOptions->sel_battle[MENUITEM_BATTLE_GEN_ONE_HYPER_BEAM]      = gSaveBlock2Ptr->optionsGenOneHyperBeam;
         sOptions->sel_battle[MENUITEM_BATTLE_RUN_TYPE]          = gSaveBlock2Ptr->optionsRunType;
 
         sOptions->sel_sound[MENUITEM_SOUND_SOUND]                             = gSaveBlock2Ptr->optionsSound;
@@ -1110,6 +1121,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsBallPrompt       = sOptions->sel_battle[MENUITEM_BATTLE_BALL_PROMPT];
     gSaveBlock2Ptr->optionsNewBackgrounds   = sOptions->sel_battle[MENUITEM_BATTLE_NEW_BACKGROUNDS];
     gSaveBlock2Ptr->optionsNewBattleUI      = sOptions->sel_battle[MENUITEM_BATTLE_NEW_BATTLEUI];
+    gSaveBlock2Ptr->optionsGenOneHyperBeam  = sOptions->sel_battle[MENUITEM_BATTLE_GEN_ONE_HYPER_BEAM];
     gSaveBlock2Ptr->optionsRunType          = sOptions->sel_battle[MENUITEM_BATTLE_RUN_TYPE];
     
     gSaveBlock2Ptr->optionsSound            = sOptions->sel_sound[MENUITEM_SOUND_SOUND];
@@ -1987,6 +1999,26 @@ static void DrawChoices_New_BattleUI(int selection, int y)
     }
     DrawOptionMenuChoice(sText_OldUI, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_NewUI, GetStringRightAlignXOffset(1, sText_NewUI, 198), y, styles[1], active);
+}
+
+static const u8 sText_Gen3HyperBeam[]        = _("GEN 3");
+static const u8 sText_Gen1HyperBeam[]        = _("GEN 1");
+static void DrawChoices_GenOne_HyperBeam(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_BATTLE_GEN_ONE_HYPER_BEAM);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    if (selection == 0)
+    {
+        gSaveBlock2Ptr->optionsGenOneHyperBeam = 0; //Gen 3 hyper beam
+    }
+    else
+    {
+        gSaveBlock2Ptr->optionsGenOneHyperBeam = 1; //Gen 1 Hyper beam
+    }
+    DrawOptionMenuChoice(sText_Gen3HyperBeam, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Gen1HyperBeam, GetStringRightAlignXOffset(1, sText_NewUI, 198), y, styles[1], active);
 }
 
 static const u8 sText_No[]        = _("NO");

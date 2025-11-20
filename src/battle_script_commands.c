@@ -3241,9 +3241,20 @@ void SetMoveEffect(bool8 primary, u8 certain)
                 }
                 break;
             case MOVE_EFFECT_RECHARGE:
-                gBattleMons[gEffectBattler].status2 |= STATUS2_RECHARGE;
-                gDisableStructs[gEffectBattler].rechargeTimer = 2;
-                gLockedMoves[gEffectBattler] = gCurrentMove;
+                if(gSaveBlock2Ptr->optionsGenOneHyperBeam){    
+                    // Only recharge if the target survived the hit
+                    if (gBattleMons[gBattlerTarget].hp != 0)
+                    {
+                        gBattleMons[gEffectBattler].status2 |= STATUS2_RECHARGE;
+                        gDisableStructs[gEffectBattler].rechargeTimer = 2;
+                        gLockedMoves[gEffectBattler] = gCurrentMove;
+                    }
+                }
+                else{
+                    gBattleMons[gEffectBattler].status2 |= STATUS2_RECHARGE;
+                    gDisableStructs[gEffectBattler].rechargeTimer = 2;
+                    gLockedMoves[gEffectBattler] = gCurrentMove;
+                }
                 gBattlescriptCurrInstr++;
                 break;
             case MOVE_EFFECT_RAGE:
