@@ -21,7 +21,7 @@ enum
     PAGE_HNS_PLAYTESTERS_8,
     PAGE_HNS_PLAYTESTERS_9,
     PAGE_HNS_PLAYTESTERS_10,
-    PAGE_BATTLE_FRONTIER_DATA,
+    PAGE_HNS_PLAYTESTERS_11,
     PAGE_PARAMETRIC_DESIGNERS,
     PAGE_POKEDEX_TEXT,
     PAGE_ENVIRONMENT_AND_TOOL_PROGRAMS_1,
@@ -147,6 +147,36 @@ static const u8 sCreditsText_TheSmithPlaysDialogue[]           = _("Crystal Lega
 static const u8 sCreditsText_SurfMons[]                        = _("Surfing Pokémon");
 static const u8 sCreditsText_slawter666[]                      = _("slawter666");
 static const u8 sCreditsText_wally217[]                        = _("wally-217");
+
+//new ones: andyshrew, nettletOn, tasty, BasedTuxedoMask, Johnna, GoodVibez420, Dante, Bee, Anne-4, Dragon121, goldy, JonTheMoron, k3v
+static const u8 sCreditsText_andyshrew[]      = _("andyshrew");
+static const u8 sCreditsText_nettletOn[]      = _("nettletOn");
+static const u8 sCreditsText_tasty[]          = _("tasty");
+static const u8 sCreditsText_BasedTuxedoMask[] = _("BasedTuxedoMask");
+static const u8 sCreditsText_Johnna[]         = _("Johnna");
+static const u8 sCreditsText_GoodVibez420[]   = _("GoodVibez420");
+static const u8 sCreditsText_Dante[]          = _("Dante");
+static const u8 sCreditsText_Bee[]     = _("Bee");
+static const u8 sCreditsText_stingrayanne[]         = _("stingrayanne");
+static const u8 sCreditsText_Dragon121[]       = _("Dragon121");
+static const u8 sCreditsText_goldy[]            = _("Goldy");
+static const u8 sCreditsText_JonTheMoron[]     = _("JonTheMoron");
+static const u8 sCreditsText_k3v[]             = _("k3v");
+
+static const struct CreditsEntry sCreditsEntry_andyshrew = {11, FALSE, sCreditsText_andyshrew};
+static const struct CreditsEntry sCreditsEntry_nettletOn = {11, FALSE, sCreditsText_nettletOn};
+static const struct CreditsEntry sCreditsEntry_tasty = {11, FALSE, sCreditsText_tasty};
+static const struct CreditsEntry sCreditsEntry_BasedTuxedoMask = {11, FALSE, sCreditsText_BasedTuxedoMask};
+static const struct CreditsEntry sCreditsEntry_Johnna = {11, FALSE, sCreditsText_Johnna};
+static const struct CreditsEntry sCreditsEntry_GoodVibez420 = {11, FALSE, sCreditsText_GoodVibez420};
+static const struct CreditsEntry sCreditsEntry_Dante = {11, FALSE, sCreditsText_Dante};
+static const struct CreditsEntry sCreditsEntry_Bee = {11, FALSE, sCreditsText_Bee};
+static const struct CreditsEntry sCreditsEntry_stingrayanne = {11, FALSE, sCreditsText_stingrayanne};
+static const struct CreditsEntry sCreditsEntry_Dragon121 = {11, FALSE, sCreditsText_Dragon121};
+static const struct CreditsEntry sCreditsEntry_goldy = {11, FALSE, sCreditsText_goldy};
+static const struct CreditsEntry sCreditsEntry_JonTheMoron = {11, FALSE, sCreditsText_JonTheMoron};
+static const struct CreditsEntry sCreditsEntry_k3v = {11, FALSE, sCreditsText_k3v};
+
 
 
 static const u8 sCreditsText_PkmnEmeraldVersion[]             = _("POKéMON EMERALD VERSION");
@@ -688,39 +718,39 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_BlackBeltJiraiya,
     },
     [PAGE_HNS_PLAYTESTERS_8] = {
-        _,
-        _,
-        _,
-        _,
-        _,
+        &sCreditsEntry_Playtesters,
+        &sCreditsEntry_andyshrew,
+        &sCreditsEntry_nettletOn,
+        &sCreditsEntry_tasty,
+        &sCreditsEntry_BasedTuxedoMask,
     },
     [PAGE_HNS_PLAYTESTERS_9] = {
-        _,
-        _,
-        _,
-        _,
-        _,
+        &sCreditsEntry_Playtesters,
+        &sCreditsEntry_Johnna,
+        &sCreditsEntry_GoodVibez420,
+        &sCreditsEntry_Dante,
+        &sCreditsEntry_Bee,
     },
     [PAGE_HNS_PLAYTESTERS_10] = {
-        _,
-        _,
-        _,
-        _,
+        &sCreditsEntry_Playtesters,
+        &sCreditsEntry_stingrayanne,
+        &sCreditsEntry_Dragon121,
+        &sCreditsEntry_goldy,
         _,
     },
-    [PAGE_BATTLE_FRONTIER_DATA] = {
-        _,
-        &sCreditsEntry_PkmnEmeraldVersion,
-        &sCreditsEntry_Credits,
+    [PAGE_HNS_PLAYTESTERS_11] = {
+        &sCreditsEntry_Playtesters,
+        &sCreditsEntry_JonTheMoron,
+        &sCreditsEntry_k3v,
         _,
         _,
     },
     [PAGE_PARAMETRIC_DESIGNERS] = {
-        &sCreditsEntry_ParametricDesigners,
-        &sCreditsEntry_TeruyukiShimoyamada,
-        &sCreditsEntry_ShigekiMorimoto,
-        &sCreditsEntry_TetsujiOhta,
-        &sCreditsEntry_KojiNishino,
+       _,
+        &sCreditsEntry_PkmnEmeraldVersion,
+        &sCreditsEntry_Credits,
+        _,
+        _,
     },
     [PAGE_POKEDEX_TEXT] = {
         _,
